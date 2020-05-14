@@ -13,19 +13,23 @@ import com.henryrobbins.creator.Graph;
 import com.henryrobbins.creator.Node;
 import com.henryrobbins.creator.Stat;
 
+/** Maintains a graph builder window for building a structural graph */
 public class StructuralGraph extends Graph{
 	
+	/** true iff r is being pressed */
 	private boolean rPressed;
 	
-	// Setup Statistics
+	/** statistics for this structural graph */
 	public StructuralStatistics stats;
 		
+	/** Construct a structural graph builder window */
 	public StructuralGraph(StructuralStatistics stats) {
 		super();
 		window.setTitle("Structural Graph");
 		this.stats = stats;
 	}
 
+	/** Additional implementation for drawing the window */
 	@Override
 	protected void paintComponent(Graphics g) {
 		
@@ -83,7 +87,7 @@ public class StructuralGraph extends Graph{
 		
 	}
 	
-	// Complies and returns a hashMap to represent drawn graph
+	/** return a hashmap representing the current graph */
 	public LinkedHashMap<Integer,ArrayList<Integer>> compileHashMap() {
 			
 		LinkedHashMap<Integer,ArrayList<Integer>> hashMap = new LinkedHashMap<Integer,ArrayList<Integer>>();
@@ -106,7 +110,7 @@ public class StructuralGraph extends Graph{
 				
 	}
 	
-	// This code runs when mouse is dragged in window
+	/** moves node with cursor while mouse is being dragged in valid location */
 	@Override
 	public void mouseDragged(MouseEvent e) {
 			
@@ -122,7 +126,7 @@ public class StructuralGraph extends Graph{
 		}
 	}
 	
-	// This code runs when a key "e" is pressed
+	/** gets the current key being pressed */
 	@Override
 	public void keyPressed(KeyEvent e) {
 
@@ -149,7 +153,7 @@ public class StructuralGraph extends Graph{
 			
 	}
 	 
-	// This code runs when a key "e" is released
+	/** gets the current key being released */
 	@Override
 	public void keyReleased(KeyEvent e) {
 		
@@ -172,7 +176,7 @@ public class StructuralGraph extends Graph{
 			
 	}
 	
-	// This code runs when the mouse is pressed
+	/** runs when mouse is pressed. Action depends on key being pressed. */
 	@Override
 	public void mousePressed(MouseEvent e) {
 				

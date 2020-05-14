@@ -2,9 +2,7 @@ package com.henryrobbins.creator.undirected;
 
 import com.henryrobbins.creator.Statistics;
 
-public class UndirectedStatistics extends Statistics{
-	
-	// No Additional Implementation
+/** Maintains the statistics on an undirected graph */
+public class UndirectedStatistics extends Statistics {
 	
 }
-

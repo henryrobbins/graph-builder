@@ -12,20 +12,23 @@ import com.henryrobbins.creator.Graph;
 import com.henryrobbins.creator.Node;
 import com.henryrobbins.creator.Stat;
 
+/** Maintains a graph builder window for building a grid graph */
 public class GridGraph extends Graph{
 
+	/** nearest node on grid */
 	public Node nearNode;
 	
-	// Setup Statistics
+	/** statistics for this grid graph */
 	public GridStatistics stats;
 			
+	/** Construct a grid graph builder window */
 	public GridGraph(GridStatistics stats) {
 		super();
 		window.setTitle("Grid Graph");
 		this.stats = stats;
 	}
 	
-	// This draws on the window 
+	/** Additional implementation for drawing the window */
 	@Override
 	protected void paintComponent(Graphics g) {
 			
@@ -93,7 +96,7 @@ public class GridGraph extends Graph{
 		}
 	}
 		
-	// Complies and returns a hashMap to represent drawn graph
+	/** return a hashmap representing the current graph */
 	public LinkedHashMap<Integer,ArrayList<Integer>> compileHashMap() {
 			
 		LinkedHashMap<Integer,ArrayList<Integer>> hashMap = new LinkedHashMap<Integer,ArrayList<Integer>>();
@@ -116,7 +119,7 @@ public class GridGraph extends Graph{
 				
 	}
 	
-	// Finds the closest node to the current mousePosition
+	/** find closest node on grid */
 	public Node findNearNode(Node exclude) {
 			
 		double min = nodes.get(0).getDistance(mx, my-25);
@@ -134,7 +137,7 @@ public class GridGraph extends Graph{
 		return closest;	
 	}
 	
-	// This code runs when the mouse is pressed
+	/** runs when mouse is pressed. Action depends on key being pressed. */
 	@Override
 	public void mousePressed(MouseEvent e) {
 				
@@ -206,7 +209,7 @@ public class GridGraph extends Graph{
 		}
 	}	
 		
-	// This code runs when mouse is dragged in window
+	/** moves node with cursor while mouse is being dragged in valid location */
 	@Override
 	public void mouseDragged(MouseEvent e) {
 			
@@ -230,7 +233,4 @@ public class GridGraph extends Graph{
 			repaint();
 		}
 	}	
-	
-	
-	
 }

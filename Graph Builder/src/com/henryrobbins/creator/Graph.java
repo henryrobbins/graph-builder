@@ -5,38 +5,49 @@ import java.awt.event.*;
 import java.util.*;
 import javax.swing.*;
 
+/** Abstract class representing a graph. All graph types should extend. */
 public abstract class Graph extends JComponent implements MouseListener, MouseMotionListener, KeyListener {
 	
-	// ArrayList of Nodes and Edges
+	/** list of nodes in graph */
 	public ArrayList<Node> nodes = new ArrayList<Node>();
+	/** list of edges in graph */
 	public ArrayList<Edge> edges = new ArrayList<Edge>();;
 	
-	// Checks for keys pressed
+	/** status of n key */
 	public boolean nPressed;	
+	/** status of e key */
 	public boolean ePressed;
+	/** status of d key */
 	public boolean dPressed;
 	
-	// Mouse position
+	/** x-coordinate of mouse location */
 	public int mx;
+	/** y-coordinate of mouse location */
 	public int my;
 	
-	// Various Node and Edge types
+	/** when adding an edge, the tail node */
 	public Node initialNode;
+	/** when adding an edge, the head node */
 	public Node finalNode;
+	/** when moving a node, the node being moved */
 	public Node moveNode;
+	/** when deleting a node, the node being deleted */
 	public Node deleteNode;
+	/** when deleting an edge, the edge being deleted */
 	public Edge deleteEdge;
 	
-	// Updates stats when true
+	/** true if stats need to be updated */
 	public boolean updateStats = false; 
 	
-	// Screen Dimensions
+	/** size of moniter screen */
 	public Dimension screenSize = new Dimension(Toolkit.getDefaultToolkit().getScreenSize());
+	/** size of this window */
 	public Dimension windowSize;
 	
+	/** this window */
 	public JFrame window = new JFrame("Graph");
 
-	// Launches Graph
+	/** Construct a graph window */
 	public Graph(){	
 		window.add(this);
 		window.pack();
@@ -53,12 +64,12 @@ public abstract class Graph extends JComponent implements MouseListener, MouseMo
 		window.addKeyListener(this);
 	}
 	
-	// Sets dimension
+	/** Set dimensions of window */
 	public Dimension getPreferredSize() {
 		return new Dimension(550,275);
 	}
 	
-	// Paints window
+	/** Draw the window */
 	@Override
 	protected void paintComponent(Graphics g) {
 		
@@ -73,23 +84,20 @@ public abstract class Graph extends JComponent implements MouseListener, MouseMo
 			
 	}
 	
-	// Finds the closest node to the current mousePosition
+	/** return node closest to mouse position */
 	public Node findClosestNode() {
-		
 		double min = nodes.get(0).getDistance(mx, my-25);
 		Node closest = nodes.get(0);		
-		
 		for (Node node: nodes) {
 			if (node.getDistance(mx, my-25) < min) {
 				min = node.getDistance(mx, my-25);
 				closest = node;
 			}
 		}
-		
 		return closest;	
 	}
 	
-	// Finds the closest edge to the current mousePosition
+	/** return edge closest to mouse position */
 	public Edge findClosestEdge() {
 			
 		double min = edges.get(0).getDistance(mx, my-25);
@@ -105,7 +113,7 @@ public abstract class Graph extends JComponent implements MouseListener, MouseMo
 		return closest;	
 	}
 	
-	// Checks if mouse position is valid
+	/** return true if mouse position is valid */
 	public boolean validMousePosition(int mx, int my) {
 		if (mx >= 0 && mx <= (int)(windowSize.width * (3.0/4.0)) && my >= 75 && my <= windowSize.height+25) {
 			return true;
@@ -114,7 +122,7 @@ public abstract class Graph extends JComponent implements MouseListener, MouseMo
 		}
 	}
 	
-	// This code runs when the mouse is pressed
+	/** runs when mouse is pressed. Action depends on key being pressed. */
 	@Override
 	public void mousePressed(MouseEvent e) {
 			
@@ -174,7 +182,7 @@ public abstract class Graph extends JComponent implements MouseListener, MouseMo
 		}
 	}	
 	
-	// This code runs when mouse is dragged in window
+	/** moves node with cursor while mouse is being dragged in valid location */
 	@Override
 	public void mouseDragged(MouseEvent e) {
 		
@@ -190,7 +198,7 @@ public abstract class Graph extends JComponent implements MouseListener, MouseMo
 		}
 	}
 
-	// This code runs when mouse is moved in window
+	/** runs when mouse moved */
 	@Override
 	public void mouseMoved(MouseEvent e) {
 		
@@ -200,7 +208,7 @@ public abstract class Graph extends JComponent implements MouseListener, MouseMo
 		repaint();
 	}
 
-	// This code runs when a key "e" is pressed
+	/** gets the current key being pressed */
 	@Override
 	public void keyPressed(KeyEvent e) {
 
@@ -223,7 +231,7 @@ public abstract class Graph extends JComponent implements MouseListener, MouseMo
 		
 	}
  
-	// This code runs when a key "e" is released
+	/** gets the current key being released */
 	@Override
 	public void keyReleased(KeyEvent e) {
 		
@@ -243,7 +251,8 @@ public abstract class Graph extends JComponent implements MouseListener, MouseMo
 		
 	}
 	
-	// These methods aren't used in this program
+	// THESE METHODS ARE NOT USED
+	
 	@Override
 	public void mouseClicked(MouseEvent e) {
 
@@ -264,11 +273,8 @@ public abstract class Graph extends JComponent implements MouseListener, MouseMo
 		
 	}
 
-		@Override
+	@Override
 	public void keyTyped(KeyEvent e) {
-			// Gets id of key typed
-			int id = e.getKeyCode();
-			// KeyEvent.VK_(letter or number etc...)
-			// Example: KeyEvent.VK_W	
-		}
+
+	}
 }

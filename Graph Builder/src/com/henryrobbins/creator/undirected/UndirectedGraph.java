@@ -4,18 +4,20 @@ import java.awt.*;
 import java.util.*;
 import com.henryrobbins.creator.*;
 
+/** Maintains a graph builder window for building an undirected graph */
 public class UndirectedGraph extends Graph {
 	
-	// Setup Statistics
+	/** statistics for this undirected graph */
 	public UndirectedStatistics stats;
 	
+	/** Construct an undirected graph builder window */
 	public UndirectedGraph(UndirectedStatistics stats) {
 		super();
 		window.setTitle("Undirected Graph");
 		this.stats = stats;
 	}
 	
-	// This draws on the window 
+	/** Additional implementation for drawing the window */
 	@Override
 	protected void paintComponent(Graphics g) {
 		
@@ -69,7 +71,7 @@ public class UndirectedGraph extends Graph {
 		}
 	}
 	
-	// Complies and returns a hashMap to represent drawn graph
+	/** return a hashmap representing the current graph */
 	public LinkedHashMap<Integer,ArrayList<Integer>> compileHashMap() {
 		
 		LinkedHashMap<Integer,ArrayList<Integer>> hashMap = new LinkedHashMap<Integer,ArrayList<Integer>>();
@@ -88,8 +90,6 @@ public class UndirectedGraph extends Graph {
 			hashMap.put(node.id,node.connections);
 		}
 		
-		return hashMap;		
-			
+		return hashMap;				
 	}
-	
 }

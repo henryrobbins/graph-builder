@@ -14,18 +14,20 @@ import com.henryrobbins.creator.Graph;
 import com.henryrobbins.creator.Node;
 import com.henryrobbins.creator.Stat;
 
+/** Maintains a graph builder window for building an undirected graph */
 public class DirectedGraph extends Graph {
 	
-	// Setup Statistics
+	/** statistics for this directed graph */
 	public DirectedStatistics stats;
 			
+	/** Construct a directed graph builder window */
 	public DirectedGraph(DirectedStatistics stats) {
 		super();
 		window.setTitle("Directed Graph");
 		this.stats = stats;
 	}
 	
-	// This draws on the window 
+	/** Additional implementation for drawing the window */
 	@Override
 	protected void paintComponent(Graphics g) {
 		
@@ -78,6 +80,7 @@ public class DirectedGraph extends Graph {
 		
 	}
 
+	/** Draw arrow on edge */
 	private void drawArrow(Graphics g,int mx,int my) {
 		
 		int[] x = new int[3];
@@ -153,7 +156,7 @@ public class DirectedGraph extends Graph {
 		g2d.setTransform(old);
 	}
 	
-	// Complies and returns a hashMap to represent drawn graph
+	/** return a hashmap representing the current graph */
 	public LinkedHashMap<Integer,ArrayList<Integer>> compileHashMap() {
 			
 		LinkedHashMap<Integer,ArrayList<Integer>> hashMap = new LinkedHashMap<Integer,ArrayList<Integer>>();
@@ -174,6 +177,7 @@ public class DirectedGraph extends Graph {
 		return hashMap;		
 	}
 	
+	/** runs when mouse is pressed. Action depends on key being pressed. */
 	@Override
 	public void mousePressed(MouseEvent e) {
 			

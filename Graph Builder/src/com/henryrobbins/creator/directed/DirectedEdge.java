@@ -5,12 +5,15 @@ import java.awt.Graphics2D;
 import java.awt.geom.AffineTransform;
 import com.henryrobbins.creator.*;
 
+/** Maintains information related to the directed edge of a graph including visual representation */
 public class DirectedEdge extends Edge{
 
+	/** Construct a directed edge */
 	public DirectedEdge(Node n1, Node n2) {
 		super(n1, n2);
 	}
 
+	/** Draw this directed edge on the Graphics */
 	@Override
 	public void drawEdge(Graphics g) {
 		if (n1.x == n2.x && n1.y == n2.y) {
@@ -91,5 +94,4 @@ public class DirectedEdge extends Edge{
 		g.fillPolygon(x,y,3); 
 		g2d.setTransform(old);
 	}
-
 }

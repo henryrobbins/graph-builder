@@ -20,19 +20,24 @@ import com.henryrobbins.creator.structural.StructuralStatistics;
 import com.henryrobbins.creator.undirected.UndirectedGraph;
 import com.henryrobbins.creator.undirected.UndirectedStatistics;
 
+/** Starting window of application where user selects type of graph to build */
 public class StartScreen extends JFrame implements ActionListener {
 
-	// Creates ArrayLists of graphs and statistics for multiple windows
+	/** list of current graphs being built */
 	ArrayList<Graph> graphs= new ArrayList<Graph>();
+	/** list of statistics for current graphs being built*/
 	ArrayList<Statistics> statistics= new ArrayList<Statistics>();
 
-	// Creates JButtons and window
+	/** button to create an undirected graph */
 	JButton undirectedGraph= new JButton("New Undirected Graph");
+	/** button to create a directed graph */
 	JButton directedGraph= new JButton("New Directed Graph");
+	/** button to create a structural graph */
 	JButton structuralGraph= new JButton("New Structural Graph");
+	/** button to create a grid graph */
 	JButton gridGraph= new JButton("New Grid Graph");
 
-	// Launches Start Screen
+	/** Construct a new start screen */
 	public StartScreen() {
 		JFrame window= new JFrame();
 		window.setTitle("Graph Creator");
@@ -60,13 +65,13 @@ public class StartScreen extends JFrame implements ActionListener {
 		window.setVisible(true);
 	}
 
-	// Sets dimension
+	/** Set dimensions of start screen window */
 	@Override
 	public Dimension getPreferredSize() {
 		return new Dimension(400, 150);
 	}
 
-	// Pulls up Graphs and Statistics
+	/** Create a graph builder window corresponding to the pressed button */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == undirectedGraph) {
