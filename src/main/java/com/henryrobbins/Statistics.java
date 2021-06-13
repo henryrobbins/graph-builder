@@ -1,4 +1,4 @@
-package com.henryrobbins.creator;
+package com.henryrobbins;
 
 import java.util.ArrayList;
 import java.util.Collections;

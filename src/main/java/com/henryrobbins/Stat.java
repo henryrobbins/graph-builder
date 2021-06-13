@@ -1,4 +1,4 @@
-package com.henryrobbins.creator;
+package com.henryrobbins;
 
 /** Maintains information related to a statistic of a graph */
 public class Stat {

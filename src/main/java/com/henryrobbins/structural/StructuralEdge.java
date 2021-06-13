@@ -1,11 +1,11 @@
-package com.henryrobbins.creator.structural;
+package com.henryrobbins.structural;
 
 import java.awt.Graphics;
 
-import com.henryrobbins.creator.Edge;
-import com.henryrobbins.creator.Node;
+import com.henryrobbins.Edge;
+import com.henryrobbins.Node;
 
-public class StructuralEdge extends Edge{
+public class StructuralEdge extends Edge {
 	
 	public boolean isPositive;
 

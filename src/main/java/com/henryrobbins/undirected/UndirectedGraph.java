@@ -1,8 +1,12 @@
-package com.henryrobbins.creator.undirected;
+package com.henryrobbins.undirected;
 
 import java.awt.*;
 import java.util.*;
-import com.henryrobbins.creator.*;
+
+import com.henryrobbins.Edge;
+import com.henryrobbins.Graph;
+import com.henryrobbins.Node;
+import com.henryrobbins.Stat;
 
 /** Maintains a graph builder window for building an undirected graph */
 public class UndirectedGraph extends Graph {

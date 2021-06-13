@@ -1,4 +1,4 @@
-package com.henryrobbins.creator;
+package com.henryrobbins;
 
 import java.awt.Dimension;
 import java.awt.GridLayout;
@@ -11,14 +11,14 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 
-import com.henryrobbins.creator.directed.DirectedGraph;
-import com.henryrobbins.creator.directed.DirectedStatistics;
-import com.henryrobbins.creator.grid.GridGraph;
-import com.henryrobbins.creator.grid.GridStatistics;
-import com.henryrobbins.creator.structural.StructuralGraph;
-import com.henryrobbins.creator.structural.StructuralStatistics;
-import com.henryrobbins.creator.undirected.UndirectedGraph;
-import com.henryrobbins.creator.undirected.UndirectedStatistics;
+import com.henryrobbins.directed.DirectedGraph;
+import com.henryrobbins.directed.DirectedStatistics;
+import com.henryrobbins.grid.GridGraph;
+import com.henryrobbins.grid.GridStatistics;
+import com.henryrobbins.structural.StructuralGraph;
+import com.henryrobbins.structural.StructuralStatistics;
+import com.henryrobbins.undirected.UndirectedGraph;
+import com.henryrobbins.undirected.UndirectedStatistics;
 
 /** Starting window of application where user selects type of graph to build */
 public class StartScreen extends JFrame implements ActionListener {

@@ -1,12 +1,14 @@
-package com.henryrobbins.creator.directed;
+package com.henryrobbins.directed;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.geom.AffineTransform;
-import com.henryrobbins.creator.*;
+
+import com.henryrobbins.Edge;
+import com.henryrobbins.Node;
 
 /** Maintains information related to the directed edge of a graph including visual representation */
-public class DirectedEdge extends Edge{
+public class DirectedEdge extends Edge {
 
 	/** Construct a directed edge */
 	public DirectedEdge(Node n1, Node n2) {

@@ -1,6 +1,6 @@
-package com.henryrobbins.creator.directed;
+package com.henryrobbins.directed;
 
-import com.henryrobbins.creator.Statistics;
+import com.henryrobbins.Statistics;
 
 /** Maintains the statistics on a directed graph */
 public class DirectedStatistics extends Statistics {

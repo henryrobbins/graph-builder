@@ -1,4 +1,4 @@
-package com.henryrobbins.creator.grid;
+package com.henryrobbins.grid;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -7,10 +7,11 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
-import com.henryrobbins.creator.Edge;
-import com.henryrobbins.creator.Graph;
-import com.henryrobbins.creator.Node;
-import com.henryrobbins.creator.Stat;
+
+import com.henryrobbins.Edge;
+import com.henryrobbins.Node;
+import com.henryrobbins.Stat;
+import com.henryrobbins.Graph;
 
 /** Maintains a graph builder window for building a grid graph */
 public class GridGraph extends Graph{
