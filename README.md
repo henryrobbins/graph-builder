@@ -1,7 +1,13 @@
 # Graph Builder
 
-Download the [Runnable JAR file](build/libs/graph-builder-1.0.0.jar) to run the
-graph builder program.  Upon opening the program, you will see the following
+To build and run the application, run the two commands below:
+
+```
+./gradlew build
+java -jar build/libs/graph-builder-1.0.0.jar
+```
+
+Upon opening the program, you will see the following
 start screen.
 
 <img src="README_images/start.png" alt="Start screen" width="400"/>
