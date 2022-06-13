@@ -108,3 +108,5 @@ Temporary Items
 # Extra
 .DS_Store
 
+# GIMP file
+graph_builder.xcf
